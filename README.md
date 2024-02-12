@@ -9,7 +9,7 @@ It searches for the files /etc/lsb-release or (if not available) /etc/os-release
 
 ```bash
 
-./update-system.sh
+python3 ./update-system.py
 
 ```
 
