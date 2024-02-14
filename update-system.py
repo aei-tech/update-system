@@ -51,7 +51,7 @@ else:
 
 print("\n### Flatpaks are now being checked ### \n")
 
-os.system(f"{flatpak} update 2>> {update_log}")
+os.system(f"{flatpak} update --assumeyes 2>> {update_log}")
 
 # Prompting for confirmation
 print("\nThese following flatpaks are no longer needed and can be uninstalled:\n")
