@@ -39,7 +39,7 @@ os.system(f"date >> {update_log}")
 
 # Check for distribution and execute commands to update
 if any(keyword.lower() in check_distro.lower() for keyword in ['ubuntu', 'debian']):
-    os.system(f"{privilege} apt update >> {update_log}")
+    os.system(f"{privilege} apt update -y >> {update_log}")
     os.system(f"{privilege} apt upgrade -y >> {update_log}")
     os.system(f"{privilege} apt purge --auto-remove -y >> {update_log}")
     os.system(f"{privilege} snap refresh 2>> {update_log}")
@@ -47,7 +47,7 @@ else:
     # For whatever reason no distribution is found, commands will be executed either way.
     os.system(f"{privilege} apt update -y >> {update_log}")
     os.system(f"{privilege} apt upgrade -y >> {update_log}")
-    os.system(f"{privilege} apt purge --auto-remove >> {update_log}")
+    os.system(f"{privilege} apt purge --auto-remove -y >> {update_log}")
 
 print("\n### Flatpaks are now being checked ### \n")
 
